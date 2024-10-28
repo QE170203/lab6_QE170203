@@ -1,16 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import StudentList from './components/StudentList';
-import StudentDetails from './components/StudentDetails';
 
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import StudentManagement from './components/StudentManagement';
+import StudentDetail from './components/StudentDetail';
+import AddStudent from './components/AddStudent';
+import EditStudent from './components/EditStudent';
+
+const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<StudentList />} />
-        <Route path="/student/:id" element={<StudentDetails />} />
+        <Route path="/" element={<StudentManagement />} />
+        <Route path="/students/:id" element={<StudentDetail />} />
+        <Route path="/add-student" element={<AddStudent />} />
+        <Route path="/edit-student/:id" element={<EditStudent />} />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
